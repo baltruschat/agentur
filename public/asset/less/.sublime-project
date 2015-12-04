@@ -1,0 +1,19 @@
+{
+    "folders":
+    [
+        {
+            "path": "/Users/felixmacbook/Desktop/Agentur-Frontend/asset"
+        }
+    ],
+    "settings":
+    {
+        "less2css":
+        {
+            "lessBaseDir": "/less",
+            "main_file": "/less/style.less",
+            "outputDir": "/css",
+            "ignorePrefixedFiles": true,
+            "showErrorWithWindow" : true
+        }
+    }
+}

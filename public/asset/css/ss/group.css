@@ -1,0 +1,35 @@
+.table-groups {
+
+}
+
+.table-groups .h_name {
+	text-align: left;
+}
+
+.table-groups .h_leader {
+	text-align: left;
+}
+
+.table-groups .h_count {
+	text-align: center;
+}
+
+.table-groups .h_actions {
+	text-align: right;
+}
+
+.table-groups .name {
+	text-align: left;
+}
+
+.table-groups .leader {
+	text-align: left;
+}
+
+.table-groups .count {
+	text-align: center;
+}
+
+.table-groups .actions {
+	text-align: right;
+}

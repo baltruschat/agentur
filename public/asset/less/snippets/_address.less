@@ -1,0 +1,157 @@
+
+.address-list{
+	border-right: #999999 1px solid;
+	overflow-x: auto;
+	ol{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	li{
+		border-bottom: #999999 1px dotted;
+		padding: 5px;
+		cursor: pointer;
+	}
+
+	li:hover, 
+	li.active{
+		background: #f3f3f4;
+	}
+
+
+	li.search{
+		padding: 10px 20px;
+	}
+
+	li.search:hover{
+		background: none;
+	}
+
+	li:first-child{
+		
+	}
+
+	 p{
+		margin: 0;
+	}
+
+	.sort{
+		font-weight: bold;
+	}
+
+}
+
+.address-content{
+	min-height: 800px;
+}
+
+.address-card{
+	
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-duration: 1s;
+	-moz-animation-delay: 0s;
+	-moz-animation-iteration-count: infinite;
+
+	.favicon .fa{
+		font-size: 30px;
+	} 
+	.warp{
+		border: 1px solid #e5e6e7;
+		background: #f3f3f4;
+		padding: 30px;
+		position: relative;
+		min-height: 350px;
+		margin-bottom: 30px
+	}
+
+	.label{
+		font-size: 100%;
+	}
+
+	.remove{
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		color: #333;
+	}
+
+	.edit{
+		position: absolute;
+		right: 25px;
+		top: 10px;
+		color: #333;
+	}
+
+	.person{
+		margin-left: 50px;
+	}
+
+	.company{
+		font-style: italic;
+		color: #999999;
+	}
+
+	.name{
+		font-size: 24px;
+		color: #ef3434;
+		font-weight: 100;
+		line-height: 100%;
+	}
+
+	.company{
+		color: #999999;
+		font-style: italic;
+	}
+
+	.address{
+		padding-left: 50px;
+	}
+
+	.contact,
+	.person,
+	.address{
+		margin-bottom: 10px;
+	}
+
+	.www, 
+	.email{
+		text-overflow: ellipsis;
+	  	-o-text-overflow: ellipsis;
+	  	white-space: nowrap;
+	  	overflow: hidden;
+	}
+
+	.data span{
+		display: inline-block;
+		width: 50px;
+	}
+
+	.tel{
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 1199px) and (min-width: 992px){
+	.address-card .person, .address-card .address{
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 1199px) and (min-width: 992px){
+	.address-card .person, .address-card .address{
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 1199px) and (min-width: 992px){
+	.address-card .person, .address-card .address{
+		margin-left: 0;
+		padding-left: 0;
+	}
+}

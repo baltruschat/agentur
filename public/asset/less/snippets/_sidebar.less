@@ -1,0 +1,93 @@
+
+.sidebar{
+	position: absolute;
+	width: 200px;
+
+	.widget{
+		color: darken(@color-light-grey, 15%);
+		margin-bottom: @padding-main;
+	}
+	.user{
+		padding: 0px 15px 0px 15px;
+		.image{
+			width: 60%;
+			margin-bottom: 5px;
+		}
+		.workgroup {
+			a{
+				font-size: @font;
+				color: darken(@color-light-grey, 15%);
+			}
+			a:hover{
+				text-decoration: none;
+			}
+		}
+		.profil a{
+			color: #FFF;
+			font-weight: 100;
+		}
+		.dropdown-menu a{
+			color: @color-dark;
+		}
+		
+	}
+
+	#main-nav{
+		> .nav > li{
+			margin-top: 0;
+			a{
+				border-bottom: none;
+				border-top: none;
+				color: darken(@color-light-grey, 15%);
+				border-left: 5px solid @color-dark;
+			}
+			a:hover,
+			&.active a{
+				color: #FFF;
+				background: lighten(@color-dark, 7.5%);
+				border-left: 5px solid @color-main;
+			}
+			&.active:hover a{
+				background: rgba(255,255,255,0.1);
+			}
+
+			> a > .fa{
+				font-size: 120%;
+				width: 20px;
+			}
+
+			> .submenu{
+				margin: 10px 0; 
+			
+				> li > a{
+					border-bottom: 0;
+				}
+			}
+		}
+
+		.navbar {
+			.navbar-nav .fa{
+				font-size: 20px;
+			}
+
+			.profil .profil-img{
+				margin-right: 3px;
+			}
+		}
+	}
+
+	/* Nav Bar */
+
+	.navbar-inverse{
+		background: #DDD;
+		border: none;
+	}
+
+	.toggle-navigation{
+		position: absolute;
+		right: 30px;
+		top: 40px;
+		display: none;
+	}
+}
+

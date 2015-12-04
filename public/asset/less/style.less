@@ -1,0 +1,133 @@
+@import "snippets/_vars.less";
+
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	color: #333;
+	font-size: @font;
+	line-height: 150%;
+	background: @color-dark;
+	font-weight: 300;
+
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+h1{
+	font-size: @font-h1;
+	color: @color-main;
+}
+
+h1.underline,h2.underline,h3.underline,h4.underline,h5.underline,h6.underline{
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid @color-light-grey;
+}
+
+th, strong, b{
+	font-weight: 500;
+}
+
+/* Breadcrumb
+******************************************** */
+
+.breadcrumb{
+	background: none;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.breadcrumb a{
+	color: @color-dark;
+}
+
+/* Content
+******************************************** */
+
+#wrapper{
+	margin-top: 50px;
+}
+
+#content{
+	margin-left: 200px;
+	margin-top: 0;
+	margin-right: 0;
+	min-width: 400px;
+	min-height: 1000px;
+	overflow: hidden;
+	position: relative;
+	background: @color-light-grey;
+	padding: @padding-main;
+}
+
+.header h1{
+	margin-bottom: @padding-main;
+}
+
+.page{
+	background: #FFF;
+	padding: @padding-main;
+	margin-top: 30px;
+}
+
+.page:first-child, .nav + .page{
+	margin-top: 0;
+}
+
+.page-nav{
+	margin-top: @padding-main;
+	border-color: @color-light-grey;
+
+	>li>a,
+	>li>a:hover,
+	>li>a:focus{
+		border-color: @color-light-grey;
+	}
+
+	>li>a:hover,
+	>li>a:focus{
+		background-color: darken(@color-light-grey, 7.5%);
+	}
+
+	>li.active>a, 
+	>li.active>a:hover, 
+	>li.active>a:focus{
+		border: 1px solid @color-light-grey;
+		border-bottom-color: #FFF;
+	}
+}
+
+
+.no-select{
+	-ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+	user-select: none;
+}
+.pointer{
+	cursor: pointer;
+}
+
+.dz-default{
+	border: 2px dashed @color-light-grey;
+	padding: 15px;
+}
+
+body:hover .dz-default{
+	border-style: solid;
+	border-color: @color-main;
+}
+
+@import "snippets/_sidebar.less";
+@import "snippets/_address.less";
+@import "snippets/_group.less";
+@import "snippets/_menu.less";
+@import "snippets/_navbar_fixed.less";
+@import "snippets/_projects.less";
+@import "snippets/_invoices.less";
+@import "snippets/_task.less";
+@import "snippets/_timeline.less";
+@import "snippets/_login.less";
+@import "snippets/_files.less";

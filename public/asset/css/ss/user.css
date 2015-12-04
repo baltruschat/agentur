@@ -1,0 +1,31 @@
+.dropzone{
+	border: 1px dashed #e5e6e7;
+	text-align: center;
+	font-size: 18px;
+	padding: 15px;
+	color: #e5e6e7;
+	margin: 30px 10% 0;
+	line-height: 130%;
+	font-weight: 100;
+	cursor: pointer;
+}
+
+.dz-drag-hover{
+	border: 1px solid #ef3434;
+	background: #FEFEFE;
+}
+
+.previews .file{
+	margin: 15px 10% 0;
+	height: 30px;
+	width: 80%;
+}
+
+.dz-error .progress-bar{
+	display: none;
+}
+
+.profil .profil-img{
+	width: 80%;
+	margin-bottom: 5px;
+}
