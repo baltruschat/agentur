@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('header')
-	
+
 	{{ HTML::script('asset/bootstrap/typeahead/bloodhound.js') }}
 	{{ HTML::script('asset/bootstrap/typeahead/typeahead.jquery.js') }}
 	{{ HTML::style('asset/bootstrap/typeahead/typeahead.js-bootstrap.css') }}
@@ -14,8 +14,8 @@
 	{{ HTML::script('asset/bootstrap/datetimepicker/locales/bootstrap-datetimepicker.de.js') }}
 	{{ HTML::style('asset/bootstrap/datetimepicker/bootstrap-datetimepicker.min.css') }}
 
-	{{ HTML::style('asset/css/bootstrap-select.min.css') }}
-    {{ HTML::script('asset/js/bootstrap-select.min.js') }}
+	{{ HTML::style('asset/bootstrap/select/bootstrap-select.min.css') }}
+    {{ HTML::script('asset/bootstrap/select/bootstrap-select.min.js') }}
 
 	{{ HTML::script('asset/js/jquery/jquery.projects.create.js') }}
 	{{ HTML::script('asset/js/jquery/jquery.file.js') }}
@@ -44,7 +44,7 @@
 		</ul>
 
 <div class="page project-edit">
-	
+
 	<div class="content-box edit-project">
 		{{ Form::open(array('url' => 'projects/save', 'class' => 'form-horizontal' )) }}
 			{{ Form::hidden('project-id', $project->id) }}
@@ -76,11 +76,11 @@
 								@endforeach
 
 								</optgroup>
-								
+
 							@else
 								<option value="{{ $val['id'] }}">{{ $val['name'] }}</option>
 							@endif
-							
+
 						@endforeach
 
 						</select>
@@ -93,29 +93,29 @@
 			    <div class="col-sm-5">{{ Form::text('provider-contact', $project->Address->firstname .' '. $project->Address->name, array('class' => 'provider-contact form-control', 'autocomplete' => 'off' )) }}</div>
 			    {{ Form::hidden('contact', $project->Address->id, array('class' => 'contact') ) }}
 			</div>
-		
+
 			<div class="form-group">
 			    <label class="col-sm-3 control-label">Leiter: <span class="require">*</span></label>
 			    <div class="col-sm-5">{{ Form::text('provider-manager', $project->Manager->firstname.' '. $project->Manager->name, array('class' => 'provider-manager form-control')) }}</div>
 			    {{ Form::hidden('manager', $project->Manager->id, array('class' => 'manager') ) }}
 			</div>
-			
-			
+
+
 
 			<div class="form-group">
 			    <label for="" class="col-sm-3 control-label">Rechnungsstelle: <span class="require">*</span></label>
 			    <div class="col-sm-5">{{ Form::text('provider-invoice', $project->InvoiceAddress->street.', '.$project->InvoiceAddress->zip .' '.$project->InvoiceAddress->city, array('class' => 'form-control provider-invoice')) }}</div>
 			    {{ Form::hidden('invoice', $project->InvoiceAddress->id, array('class' => 'invoice') ) }}
 			</div>
-			
-			<hr class="divider" />	
+
+			<hr class="divider" />
 
 			<div class="form-group">
 			    <label for="description" class="col-sm-3 control-label">Informationen:</label>
 			    <div class="col-sm-9"> <textarea class="form-control editor" name="description" id="description" rows="15">{{ $project->description }}</textarea></div>
 			</div>
 
-			<hr class="divider" />	
+			<hr class="divider" />
 
 			<div class="form-group">
 				<label class="col-sm-3 control-label">Team:</label>
@@ -130,7 +130,7 @@
 										if($team->id == $member->id){
 											$member->task = $team->pivot->task;
 										}
-									endforeach;	
+									endforeach;
 								?>
 								<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 									<div class="member member-<?php echo $member->id; ?> {{ ($active) ? 'active' : '' }}">
@@ -157,7 +157,7 @@
 					</div>
 				</div>
 			</div>
-			<hr class="divider" />	
+			<hr class="divider" />
 
 			<div class="form-group">
 				<label class="col-sm-3 control-label">Dateien:</label>
@@ -185,7 +185,7 @@
 				</div>
 			</div>
 			{{ Form::submit('Projekt speichern', array('class' => 'btn btn-success')) }}
-			
+
 		{{ Form::close() }}
 	</div>
 </div>
