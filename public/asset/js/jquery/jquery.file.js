@@ -1,3 +1,5 @@
+// Felix Baltruschat
+
 (function ( $ ) {
 	var $settings;
 	var $this;
@@ -5,7 +7,7 @@
 	// ToDo
 	// Form Element erstellen
 	// Fallback für PDF usw...
-	
+
 	// Add Progress to Ajax Event
     var originalXhr = $.ajaxSettings.xhr;
     $.ajaxSetup({
@@ -26,7 +28,7 @@
             return req;
         }
     });
-	
+
 
 
 
@@ -48,7 +50,7 @@
 			$this.append('<div class="drop-zone">Dateien hier ablegen</div>');
 		if($this.find('.file-list').length <= 0)
 			$this.append('<div class="file-list"></div>')
-		
+
 		if($this.find('.file').length > 0){
 			$this.find('.file .delete').on('click', handleDeleteFile);
 		}
@@ -68,7 +70,7 @@
 		console.log('Function: handleDropLeave');
 		evt.stopPropagation();
     	evt.preventDefault();
-		$(evt.target).removeClass('active');	
+		$(evt.target).removeClass('active');
 	}
 
 	var handleDrop = function(evt){
@@ -78,7 +80,7 @@
 		evt.stopPropagation();
     	evt.preventDefault();
     	$(evt.target).removeClass('active');
-    	
+
     	var files = evt.dataTransfer.files;
 
 
@@ -130,9 +132,9 @@
 		}
 		if(isImage(response.fileType)){
 			$(target).append('<div class="img" style="background-image: url('+response.fileUrl+');"></div>');
-			
+
 		}else{
-			$(target).append('<div class="icon"><i class="fa '+response.icon+'"></i></div>');	
+			$(target).append('<div class="icon"><i class="fa '+response.icon+'"></i></div>');
 		}
 		$(target).append('<div class="meta">'+response.fileName+' <div class="links"><a href="'+response.fileUrl+'" target="_blank"><i class="fa fa-cloud-download"></i></a> <a href="#" title="Datei löschen" class="delete" data-id="'+response.fileOnServer+'"><i class="fa fa-times"></i></a></div></div>');
 		$(target).find('.delete').on('click', handleDeleteFile);
@@ -148,7 +150,7 @@
 			type: 			'POST',
 			data: 			{id: $this.find($(evt.currentTarget)).attr('data-id') },
     		success: function(response){
-    			
+
     			$this.find($(evt.currentTarget)).parent().parent().parent().addClass('zoomOut animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			    		$this.find($(evt.currentTarget)).parent().parent().parent().remove();
 			    });
@@ -169,6 +171,6 @@
 			default: return false;
 		}
 	}
-	
+
 
 }( jQuery ));
