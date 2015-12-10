@@ -2,7 +2,7 @@
 @section('title', $project->name)
 
 @section('header')
-    
+
 @stop
 
 @section('titleLink')
@@ -25,9 +25,61 @@
 			@endif
 			<li><a href="{{ url('/projects/edit/'.$project->id) }}" title="Bearbeiten" class="">Bearbeiten</a></li>
 		</ul>
-		
+
 		<div class="page project-timemanagement">
-				
+
+      <h2>Übersicht Bereiche</h2>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bereich</th>
+                <th>Stunden</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Gesamt</th>
+                <th><?php echo number_format($project->timemanagement()->sum('time'), 2); ?></th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>Projektmanagement</td>
+                <td><?php echo number_format($project->timemanagement()->where('work_group', 'Projektmanagement')->sum('time'),2); ?></td>
+              </tr>
+              <tr>
+                <td>Beratung</td>
+                <td><?php echo number_format($project->timemanagement()->where('work_group', 'Beratung')->sum('time'),2); ?></td>
+              </tr>
+              <tr>
+                <td>Text</td>
+                <td><?php echo number_format($project->timemanagement()->where('work_group', 'Text')->sum('time'),2); ?></td>
+              </tr>
+              <tr>
+                <td>Print</td>
+                <td><?php echo number_format($project->timemanagement()->where('work_group', 'Print')->sum('time'),2); ?></td>
+              </tr>
+              <tr>
+                <td>Online</td>
+                <td><?php echo number_format($project->timemanagement()->where('work_group', 'Online')->sum('time'),2); ?></td>
+              </tr>
+              <tr>
+                <td>Produktion</td>
+                <td><?php echo number_format($project->timemanagement()->where('work_group', 'Produktion')->sum('time'),2); ?></td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <hr />
+
+      <h2>Stunden sortiert nach Datum</h2>
+
 			<table class="table table-hover">
 				<colgroup>
 					<col>
@@ -45,7 +97,7 @@
 				</thead>
 				<tbody>
 					@foreach($project->timemanagement as $tm)
-					
+
 					<?php $amount += $tm->time; ?>
 					<tr>
 						<td>{{ date('d.m.Y', strtotime($tm->date)) }}</td>
@@ -62,6 +114,36 @@
 					</tfoot>
 				</tbody>
 			</table>
+
+      <hr />
+
+      <h2>Übersicht nach Mitarbeitern</h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bereich</th>
+                <th>Stunden</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Gesamt</th>
+                <th><?php echo number_format($project->timemanagement()->sum('time'), 2); ?></th>
+              </tr>
+            </tfoot>
+            <tbody>
+            @foreach(User::orderBy('lastname','asc')->get() as $user)
+              <tr>
+                <td>{{$user->firstname}} {{ $user->lastname }}</td>
+                <td><?php echo number_format($project->timemanagement()->where('user_id', $user->id)->sum('time'),2); ?></td>
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
 
 		</div>
 	</div>
